@@ -6,11 +6,11 @@ import dynamic from 'next/dynamic';
 import { useSession } from 'next-auth/react';
 import swal from 'sweetalert';
 
-const AllPage = dynamic(() => import('./allPage'), { ssr: false });
-const MyPage = dynamic(() => import('./myPage'), { ssr: false });
+const AllPage = dynamic(() => import('./AllPage'), { ssr: false });
+const MyPage = dynamic(() => import('./MyPage'), { ssr: false });
 
 export default function QnA() {
-    
+
     const { data: session, status } = useSession();
 
     const [selectedPage, setSelectedPage] = useState('all'); // 'all' 페이지를 기본값으로 설정

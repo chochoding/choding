@@ -77,17 +77,16 @@ export default function QnADetail({ params }: any) {
     }, []);
 
     const likedAlready = data[0]?.like?.some(obj => obj.email === session?.user?.email)
+
     const onClicklikeHandler = async (data: any) => {
         if (!session?.user?.email) {
             swal('잠깐!', '로그인 후 이용해주세요', 'warning');
             return;
         }
 
-        const filtered = data?.[0].like.filter((value: any) => {
+        const filtered = data?.[0]?.like.filter((value: any) => {
             return value.email !== email
         })
-
-        console.log(filtered)
 
         const updateResult = {
             field: "like",
@@ -96,6 +95,8 @@ export default function QnADetail({ params }: any) {
             updateType: likedAlready ? 'set' : 'push',
             value: likedAlready ? filtered : { email: email }
         };
+
+        console.log(updateResult.updateType)
 
         const res = await detailStore('put', 'qna', updateResult, postIds);
         if (res && res.status === 200) {
@@ -129,7 +130,6 @@ export default function QnADetail({ params }: any) {
             console.error('--------------삭제 실패!!!', res);
         }
     }
-    console.log(data)
 
     return (
         <>
