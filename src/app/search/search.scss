@@ -15,8 +15,9 @@
         #searchInputSub {
             flex-direction: row-reverse;
             justify-content: space-between;
-            width: calc(430px - 2rem);
-            max-width: 100%;
+            width: 100%;
+            min-width: 10rem;
+            max-width: calc(430px - 2rem);
             background-color: transparent;
             // background: linear-gradient(to right, $sub1, $mainLight);
 

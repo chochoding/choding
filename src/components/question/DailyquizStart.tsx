@@ -12,16 +12,11 @@ import axios from 'axios';
 export default function DailyquizStart({ startTest }: any) {
 
     const { quiz, isOpenFunc } = useQuestion();
-    const router = useRouter();
 
+    const router = useRouter();
     function loginGoGo() {
         isOpenFunc({ isOpen: false, isTest: false })
         router.push('/login');
-    }
-
-    function handleOpen() {  //로컬스토리지 저장된 값을 지우고 팝업 열기
-        isOpenFunc({ isOpen: true, isTest: true });
-        localStorage.removeItem('popupClosedTime');
     }
 
     const { data: session, status } = useSession();
@@ -67,7 +62,7 @@ export default function DailyquizStart({ startTest }: any) {
                         <>
                             {mypageData?.level ?
                                 (<button className='popUpBtn' onClick={() => { startTest(2) }}>오늘의 퀴즈 풀기</button>) :
-                                (<button className='popUpBtn' onClick={handleOpen}>레벨테스트 하러가기 </button>)
+                                (<button className='popUpBtn' onClick={() => { isOpenFunc({ isOpen: true, isTest: true }) }}>레벨테스트 하러가기 </button>)
                             }
 
                         </>

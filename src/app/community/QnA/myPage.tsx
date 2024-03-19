@@ -58,7 +58,7 @@ export default function MyPage() {
   }, []);
   
 
-  if (status !== 'authenticated') {
+  if (status == 'authenticated') {
     if (MyQnAList.length !== 0) {
       return <div className='myPageMain'>
         <div className='writeBtnBox'><Link className='writeBtn' href='./QnA/write'>글 쓰기</Link></div>

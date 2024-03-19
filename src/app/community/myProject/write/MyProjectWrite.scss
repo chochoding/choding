@@ -29,9 +29,9 @@
 
     #myProjectWriteImage {
         width: 100%;
+        margin: 1rem 0;
         position: relative;
         @include column-flexbox(c, c);
-        margin: 1rem 0;
 
         *:focus {
             box-shadow: none !important;
