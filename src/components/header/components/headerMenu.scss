@@ -156,13 +156,13 @@
 @include responsive(m) {
     .headerBG {
         max-width: 80%;
-        height: 100svh;
+        height: 100vh;
     }
 }
 
 @include responsive(s) {
     #HeaderMenu {
-        width: 100svw;
+        width: 100vw;
 
         &::after {
             display: none;
@@ -171,6 +171,6 @@
 
     .headerBG {
         max-width: 100%;
-        height: 100svh;
+        height: 100vh;
     }
 }

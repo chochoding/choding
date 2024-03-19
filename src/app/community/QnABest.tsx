@@ -44,7 +44,7 @@ export default function QnABest() {
       fetchData();
     }, []);
 
-    const sortedData:any = data.slice().sort((a, b) => b.like.length - a.like.length);
+    const sortedData:any = data.slice().sort((a:any, b:any) => b.like.length - a.like.length);
 
     return (
       <section id="communityQnAContainer" className="communityContainer">

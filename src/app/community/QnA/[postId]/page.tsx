@@ -14,7 +14,7 @@ import empty from '@/essets/empty.svg';
 import dumi from '@/essets/charactor/CHO.svg'
 
 export default function QnADetail({ params }: any) {
-    const [data, setData] = useState<myQnAType>();
+    const [data, setData] = useState<myQnAType[]>([]);
     const [comments, setComments] = useState<myQnACommentValue[]>([]);
     const [isOnLikeClick, setOnLike] = useState(true);
     const [isOnUpdate, setUpdate] = useState(false);
@@ -23,7 +23,7 @@ export default function QnADetail({ params }: any) {
     const id = params.postId;
     const name = session?.user?.name;
     const email = session?.user?.email;
-    const postIds = data?.postId;
+    const postIds = 0;
     const img = session?.user?.image;
     const today = new Date();
     const month = today.getMonth() + 1;
@@ -130,21 +130,23 @@ export default function QnADetail({ params }: any) {
         }
     }
 
+
+
     return (
         <>
             {
-                data && (<div className="postMain">
+                data.length && (<div className="postMain">
                     <div className="postContainer">
                         <p>{data.userName}</p>
                         <div className="postDetail">
-                            <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
+                            <p dangerouslySetInnerHTML={{ __html: data[0].content }}></p>
                         </div>
                     </div>
                     <button
                         type='button'
-                        onClick={() => { onClicklikeHandler(data.postId) }}
+                        onClick={() => { onClicklikeHandler(data[0].postId) }}
                         className={isOnLikeClick && likedAlready ? 'active like' : 'like'}>
-                        <p>♥ <span>{data?.like?.length}</span></p>
+                        <p>♥ <span>{data[0]?.like?.length}</span></p>
                     </button>
                     <form action="" className='postForm' onSubmit={handleSubmit(onSubmit)}>
                         {
