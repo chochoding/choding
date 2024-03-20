@@ -12,20 +12,20 @@ export const metadata: Metadata = {
   openGraph: {
     title: '초딩 - 초보들의 코딩공부',
     description: '팀곰문곰팀의 초딩 웹사이트입니다.',
-    images: '/choding.png'
+    images: '/image/choding.png'
   },
   twitter: {
     title: '초딩 - 초보들의 코딩공부',
     description: '팀곰문곰팀의 초딩 웹사이트입니다.',
-    images: '/choding.png'
+    images: '/image/choding.png'
   },
   icons: {
-    icon: '/favicon-16x16.png',
-    apple: '/favicon-16x16.png',
-    shortcut: '/choding.png',
+    icon: '/image/favicon-16x16.png',
+    apple: '/image/favicon-16x16.png',
+    shortcut: '/image/choding.png',
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: '/favicon-32x32.png',
+      url: '/image/favicon-32x32.png',
     }
   },
   keywords: ['next', 'react', 'routing'],

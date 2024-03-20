@@ -15,8 +15,7 @@ const nextConfigFunction = async (phase) => {
     reloadOnOnline: true,  //온라인상태가 되면 다시 로드
     swcMinify: true, //swc컴파일러 사용(babel보다 성능이 뛰어남)
     disable: false,  //pwa 비활성화
-    workboxOptions: { disableDevLogs: true },
-    //webpack 플러그인을 내부적으로 사용하는 경우 설정         
+    workboxOptions: { disableDevLogs: true },//webpack 플러그인을 내부적으로 사용하는 경우 설정  
   });
   return withPWA(nextConfig);
 };
